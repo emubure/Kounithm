@@ -54,10 +54,16 @@ public class NotePlaceProcess : MonoBehaviour {
 			lineNum = lineNum + 0.5f;
 		}
 
+		//ノーツ悪性
 		GameObject Hold = Instantiate (Resources.Load(filePass), new Vector3(1,1,1), Quaternion.identity) as GameObject;
 		NoteScript n = Hold.GetComponent<NoteScript> ();
+
 		n._noteOffset = sTiming;
 		n._lineNum = lineNum;
-		n._noteOffsetF = fTiming;
+		n.HoldTrue = true;
+		n._noteOffsetf = fTiming;
+		Debug.Log ("_noteOffset:" + n._noteOffset);
+		Debug.Log ("_lineNum:" + n._lineNum);
+		Debug.Log ("_noteOffset:" + n._noteOffsetf);
 	}
 }
