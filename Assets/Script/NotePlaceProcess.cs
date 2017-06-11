@@ -41,7 +41,7 @@ public class NotePlaceProcess : MonoBehaviour {
 
 		GameObject Tap = Instantiate (Resources.Load(filePass), new Vector3(1,1,1), Quaternion.identity) as GameObject;
 		NoteScript n = Tap.GetComponent<NoteScript> ();
-		n._noteOffset = timing;
+		n._sTiming = timing;
 		n._lineNum = lineNum;
 	}
 
@@ -58,12 +58,13 @@ public class NotePlaceProcess : MonoBehaviour {
 		GameObject Hold = Instantiate (Resources.Load(filePass), new Vector3(1,1,1), Quaternion.identity) as GameObject;
 		NoteScript n = Hold.GetComponent<NoteScript> ();
 
-		n._noteOffset = sTiming;
+		n._sTiming = sTiming;
 		n._lineNum = lineNum;
+		n._noteNum = noteNum;
 		n.HoldTrue = true;
-		n._noteOffsetf = fTiming;
-		Debug.Log ("_noteOffset:" + n._noteOffset);
+		n._fTiming = fTiming;
+		Debug.Log ("_noteOffset:" + n._sTiming);
 		Debug.Log ("_lineNum:" + n._lineNum);
-		Debug.Log ("_noteOffset:" + n._noteOffsetf);
+		Debug.Log ("_noteOffset:" + n._fTiming);
 	}
 }
