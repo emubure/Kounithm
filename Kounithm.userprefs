@@ -3,10 +3,10 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\NoteScript.cs">
     <Files>
       <File FileName="Assets\Script\Title\PlayButtonScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\GameManager.cs" Line="21" Column="4" />
-      <File FileName="Assets\Script\NoteScript.cs" Line="15" Column="18" />
-      <File FileName="Assets\Script\NotePlaceProcess.cs" Line="62" Column="17" />
-      <File FileName="Assets\Resources\Maps\BOKUTO13.txt" Line="1" Column="11" />
+      <File FileName="Assets\Script\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\NoteScript.cs" Line="95" Column="25" />
+      <File FileName="Assets\Script\NotePlaceProcess.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Maps\BOKUTO13.txt" Line="2" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
