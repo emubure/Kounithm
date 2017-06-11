@@ -23,12 +23,15 @@ public class NoteScript : MonoBehaviour {
 	void Start(){
 		tapSound = GameObject.Find ("NoteSound").GetComponent<AudioSource>();
 		if (HoldTrue == true) {
-			//Hold用のLineNumが何故かずれるので-10して0.3をかけて修正。
-			_HoldlineNum = _lineNum - 10f;
-			_HoldlineNum = _lineNum * 0.3f;
+			//HoldのX座標がちょっとズレるので修正
+			_HoldlineNum = _lineNum;
+			_HoldlineNum -= 1f;
 			//Hold用のnoteNumを使えるように修正。(中点から引いたり足したりするため)
-			_noteNum = _noteNum *0.2f;
 			_noteNum = _noteNum * 0.5f;
+			_noteNum -= 0.1f;
+
+			Debug.Log ("_HoldlineNum: "+_HoldlineNum);
+			Debug.Log ("_noteNum: " + _noteNum);
 		}
 	}
 
@@ -46,7 +49,7 @@ public class NoteScript : MonoBehaviour {
 		}
 	}
 	void updateTap(){
-		this.transform.position = new Vector3 (_lineNum, 0, noteZ);
+		this.transform.position = new Vector3 (_lineNum, 0.5f, noteZ);
 
 		//判定ラインに来たら破壊
 		if (NoteJudgeLinePassed==false&&this.transform.position.z <= 0f) {
@@ -54,7 +57,7 @@ public class NoteScript : MonoBehaviour {
 			tapSound.PlayOneShot (tapSound.clip);
 		}
 		if (this.transform.position.z <= -2f) {
-			//Destroy (gameObject);
+			Destroy (gameObject);
 		}
 	}
 
@@ -64,14 +67,17 @@ public class NoteScript : MonoBehaviour {
 		noteZ = noteZ*3f;
 		noteZf = noteZf*3f;
 
-		//終点座標を決める
 		var mesh = new Mesh ();
 		mesh.vertices = new Vector3[] {
-			new Vector3 (_HoldlineNum-_noteNum, 0.1f, noteZ),//左下
-			new Vector3 (_HoldlineNum+_noteNum, 0.1f, noteZ),//右下
-			new Vector3 (_HoldlineNum+_noteNum, 0.1f, noteZf),//右上
-			new Vector3 (_HoldlineNum-_noteNum, 0.1f, noteZf),//左上
+			new Vector3 (_HoldlineNum-_noteNum, -2f, noteZ),//左下
+			new Vector3 (_HoldlineNum+_noteNum, -2f, noteZ),//右下
+			new Vector3 (_HoldlineNum+_noteNum, -2f, noteZf),//右上
+			new Vector3 (_HoldlineNum-_noteNum, -2f, noteZf),//左上
 		};
+
+		foreach (Vector3 item in mesh.vertices) {
+			print (item);
+		}
 
 			/*mesh.uv = new Vector2[] {
 				new Vector2 (0, 0),
@@ -83,6 +89,13 @@ public class NoteScript : MonoBehaviour {
 		mesh.triangles = new int[]{
 			0,2,1,
 			0,3,2
+		};
+
+		mesh.colors = new Color[] {
+			Color.yellow,
+			Color.yellow,
+			Color.yellow,
+			Color.yellow
 		};
 
 		mesh.RecalculateNormals();
@@ -98,6 +111,7 @@ public class NoteScript : MonoBehaviour {
 		if (NoteFJudgeLinePassed==false&&noteZf <= 0f) {
 			NoteFJudgeLinePassed = true;
 			tapSound.PlayOneShot (tapSound.clip);
+			Destroy (gameObject);
 		}
 
 	}

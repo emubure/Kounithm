@@ -623,7 +623,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1049096145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0, z: 18}
+  m_LocalPosition: {x: 8.5, y: 0.5, z: 18}
   m_LocalScale: {x: 1.6, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 2082162759}
   - component: {fileID: 2082162758}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: JudgeLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -813,7 +813,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2082162757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: 0}
+  m_LocalPosition: {x: 8, y: 0.5, z: 0}
   m_LocalScale: {x: 18, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}

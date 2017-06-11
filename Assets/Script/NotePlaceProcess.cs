@@ -48,7 +48,8 @@ public class NotePlaceProcess : MonoBehaviour {
 	//Holdノーツを置くメソッド
 	static void PlaceHoldNotes(int noteNum, int sTiming, float lineNum, int fTiming){
 		Debug.Log ("PHN");
-		string filePass = "Notes/Note" + noteNum;
+		//string filePass = "Notes/Note" + noteNum;
+		string filePass = "Notes/Note1";
 
 		if (noteNum % 2 == 0) {
 			lineNum = lineNum + 0.5f;
@@ -58,6 +59,7 @@ public class NotePlaceProcess : MonoBehaviour {
 		GameObject Hold = Instantiate (Resources.Load(filePass), new Vector3(1,1,1), Quaternion.identity) as GameObject;
 		NoteScript n = Hold.GetComponent<NoteScript> ();
 
+		//NoteScriptの変数に代入
 		n._sTiming = sTiming;
 		n._lineNum = lineNum;
 		n._noteNum = noteNum;
