@@ -52,8 +52,8 @@ public class NotePlaceProcess : MonoBehaviour {
 		//string filePass = "Notes/Note" + noteNum;
 		string filePass = "Notes/HoldNotes";
 
-		if (noteNum % 2 == 0) {
-			//lineNum = lineNum - 0.5f;
+		if (noteNum % 2 == 1) {
+			lineNum = lineNum - 0.5f;
 		}
 
 		//ノーツ悪性

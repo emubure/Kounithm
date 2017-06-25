@@ -42,10 +42,10 @@ public class HoldScript : MonoBehaviour {
 	void createHoldMesh(){
 		var mesh = new Mesh ();
 		mesh.vertices = new Vector3[] {
-			new Vector3 (_HoldlineNum-_noteNum, 0f, noteZ),//左下
-			new Vector3 (_HoldlineNum+_noteNum, 0f, noteZ),//右下
-			new Vector3 (_HoldlineNum+_noteNum, 0f, noteZf),//右上
-			new Vector3 (_HoldlineNum-_noteNum, 0f, noteZf),//左上
+			new Vector3 (_HoldlineNum-_noteNum, -0.2f, noteZ),//左下
+			new Vector3 (_HoldlineNum+_noteNum, -0.2f, noteZ),//右下
+			new Vector3 (_HoldlineNum+_noteNum, -0.2f, noteZf),//右上
+			new Vector3 (_HoldlineNum-_noteNum, -0.2f, noteZf),//左上
 		};
 
 		mesh.uv = new Vector2[] {

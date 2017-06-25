@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\NotePlaceProcess.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Maps\HOPEALIVE13.txt">
     <Files>
       <File FileName="Assets\Script\Title\PlayButtonScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\NotePlaceProcess.cs" Line="66" Column="24" />
-      <File FileName="Assets\Resources\Maps\BOKUTO13.txt" Line="19" Column="1" />
-      <File FileName="Assets\Script\NoteScript.cs" Line="31" Column="21" />
-      <File FileName="Assets\Script\HoldScript.cs" Line="15" Column="18" />
+      <File FileName="Assets\Script\GameManager.cs" Line="12" Column="39" />
+      <File FileName="Assets\Script\NotePlaceProcess.cs" Line="56" Column="4" />
+      <File FileName="Assets\Resources\Maps\BOKUTO13.txt" Line="1" Column="1" />
+      <File FileName="Assets\Script\NoteScript.cs" Line="13" Column="53" />
+      <File FileName="Assets\Script\HoldScript.cs" Line="45" Column="44" />
+      <File FileName="Assets\Resources\Maps\HOPEALIVE13.txt" Line="9" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
