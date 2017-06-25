@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\GameManager.cs" />
+     <Compile Include="Assets\Script\HoldScript.cs" />
      <Compile Include="Assets\Script\NotePlaceProcess.cs" />
      <Compile Include="Assets\Script\NoteScript.cs" />
      <Compile Include="Assets\Script\Title\PlayButtonScript.cs" />

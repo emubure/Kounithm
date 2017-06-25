@@ -35,6 +35,7 @@ public class NotePlaceProcess : MonoBehaviour {
 
 		string filePass = "Notes/Note" + noteNum;
 
+		//偶数番ノーツのときにずれるので修正
 		if (noteNum % 2 == 0) {
 			lineNum = lineNum + 0.5f;
 		}
@@ -49,21 +50,20 @@ public class NotePlaceProcess : MonoBehaviour {
 	static void PlaceHoldNotes(int noteNum, int sTiming, float lineNum, int fTiming){
 		Debug.Log ("PHN");
 		//string filePass = "Notes/Note" + noteNum;
-		string filePass = "Notes/Note1";
+		string filePass = "Notes/HoldNotes";
 
 		if (noteNum % 2 == 0) {
-			lineNum = lineNum + 0.5f;
+			//lineNum = lineNum - 0.5f;
 		}
 
 		//ノーツ悪性
 		GameObject Hold = Instantiate (Resources.Load(filePass), new Vector3(1,1,1), Quaternion.identity) as GameObject;
-		NoteScript n = Hold.GetComponent<NoteScript> ();
+		HoldScript n = Hold.GetComponent<HoldScript> ();
 
 		//NoteScriptの変数に代入
 		n._sTiming = sTiming;
 		n._lineNum = lineNum;
 		n._noteNum = noteNum;
-		n.HoldTrue = true;
 		n._fTiming = fTiming;
 		Debug.Log ("_noteOffset:" + n._sTiming);
 		Debug.Log ("_lineNum:" + n._lineNum);
