@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	public Text offsetText;
 
 	void Start () {
-		NotePlaceProcess.CSVLoad ("HOPEALIVE","13");
+		NotePlaceProcess.CSVLoad ("UNDERVEILISREAL","13");
 	}
 
 	void Update () {

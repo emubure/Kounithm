@@ -50,7 +50,9 @@
      <Compile Include="Assets\Script\HoldScript.cs" />
      <Compile Include="Assets\Script\NotePlaceProcess.cs" />
      <Compile Include="Assets\Script\NoteScript.cs" />
+     <Compile Include="Assets\Script\SlideScript.cs" />
      <Compile Include="Assets\Script\Title\PlayButtonScript.cs" />
+     <None Include="Assets\Resources\Maps\UNDERVEILISREAL13.txt" />
      <None Include="Assets\Resources\Maps\HOPEALIVE13.txt" />
      <None Include="Assets\Resources\Maps\BOKUTO13.txt" />
  <Reference Include="UnityEngine.UI">

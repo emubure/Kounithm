@@ -20,18 +20,37 @@ public class NotePlaceProcess : MonoBehaviour {
 			//csvFileを1行読み込む
             string line = reader.ReadLine();
 			if (line.Split (',') [0] == "1") {//赤ノーツの場合
-				PlaceTapNotes(int.Parse(line.Split(',')[1]),int.Parse(line.Split(',')[2]),float.Parse(line.Split(',')[3]));
+				PlaceTapNotes(
+					int.Parse(line.Split(',')[1]),
+					int.Parse(line.Split(',')[2]),
+					float.Parse(line.Split(',')[3])
+				);
 			}
+
 			if (line.Split (',') [0] == "2") {//ホールドノーツの場合
-				PlaceHoldNotes(int.Parse(line.Split(',')[1]),int.Parse(line.Split(',')[2]),float.Parse(line.Split(',')[3]),int.Parse(line.Split(',')[4]));
-				Debug.Log ("H");
+				PlaceHoldNotes(
+					int.Parse(line.Split(',')[1]),
+					int.Parse(line.Split(',')[2]),
+					float.Parse(line.Split(',')[3]),
+					int.Parse(line.Split(',')[4])
+				);
+			}
+
+			if (line.Split (',') [0] == "3") {//スライドノーツの場合
+				PlaceSlideNotes(
+					int.Parse(line.Split(',')[1]),
+					int.Parse(line.Split(',')[2]),
+					float.Parse(line.Split(',')[3]),
+					int.Parse(line.Split(',')[4]),
+					int.Parse(line.Split(',')[5]),
+					float.Parse(line.Split(',')[6])
+				);
 			}
         }
     }
 
 	//Tapノーツを置くメソッド
 	static void PlaceTapNotes(int noteNum, int timing, float lineNum){
-		Debug.Log ("PTN");
 
 		string filePass = "Notes/Note" + noteNum;
 
@@ -48,10 +67,9 @@ public class NotePlaceProcess : MonoBehaviour {
 
 	//Holdノーツを置くメソッド
 	static void PlaceHoldNotes(int noteNum, int sTiming, float lineNum, int fTiming){
-		Debug.Log ("PHN");
-		//string filePass = "Notes/Note" + noteNum;
 		string filePass = "Notes/HoldNotes";
 
+		//偶数番ノーツのときにずれるので修正
 		if (noteNum % 2 == 1) {
 			lineNum = lineNum - 0.5f;
 		}
@@ -65,8 +83,27 @@ public class NotePlaceProcess : MonoBehaviour {
 		n._lineNum = lineNum;
 		n._noteNum = noteNum;
 		n._fTiming = fTiming;
-		Debug.Log ("_noteOffset:" + n._sTiming);
-		Debug.Log ("_lineNum:" + n._lineNum);
-		Debug.Log ("_noteOffset:" + n._fTiming);
+	}
+
+	//Slideノーツを置くメソッド
+	static void PlaceSlideNotes(int noteNum, int sTiming, float lineNum, int fTiming, int fnoteNum, float flineNum){
+		string filePass = "Notes/SlideNotes";
+
+		//偶数番ノーツのときにずれるので修正
+		if (noteNum % 2 == 1) {
+			lineNum = lineNum - 0.5f;
+		}
+
+		//ノーツ悪性
+		GameObject Hold = Instantiate (Resources.Load(filePass), new Vector3(1,1,1), Quaternion.identity) as GameObject;
+		SlideScript n = Hold.GetComponent<SlideScript> ();
+
+		//NoteScriptの変数に代入
+		n._sTiming = sTiming;
+		n._lineNum = lineNum;
+		n._noteNum = noteNum;
+		n._fTiming = fTiming;
+		n._fnoteNum = fnoteNum;
+		n._flineNum = flineNum;
 	}
 }
